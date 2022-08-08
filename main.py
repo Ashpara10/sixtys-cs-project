@@ -1,5 +1,6 @@
 import tkinter as tk
 from  AddBook import addBook
+import pymysql
 
 root = tk.Tk()
 root.title("Quandale Dingle")
@@ -7,6 +8,20 @@ root.minsize(width=400,height=400)
 root.geometry("600x500")
 same=True
 n=0.70
+
+# Connnecting to mysql 
+
+# --------------------------
+
+mypass = "ashpara21092005" #use your own password
+mydatabase="db" #The database name
+con = pymysql.connect (host="localhost",user="root",password=mypass,database=mydatabase)
+#root is the username here
+cur = con.cursor()
+# --------------------------
+
+print(cur.execute("SELECT title FROM books"))
+
 
 headingFrame1 = tk.Frame(root,bg="#212121",bd=5)
 headingFrame1.place(relx=0.2,rely=0.05,relwidth=0.6,relheight=0.16)
