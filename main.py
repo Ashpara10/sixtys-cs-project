@@ -1,6 +1,7 @@
 import tkinter as tk
 import tkinter.ttk as ttk
 from  AddBook import addBook
+from  DeleteBook import delete as deleteBook
 import pymysql
 
 root = tk.Tk()
@@ -21,7 +22,6 @@ con = pymysql.connect(host="localhost",user="root",password=mypass,database=myda
 cur = con.cursor()
 # --------------------------
 
-print(cur.execute("SELECT title FROM books"))
 
 
 headingFrame1 = ttk.Frame(root,padding=10)
@@ -33,7 +33,7 @@ headingLabel.place(relx=0,rely=0, relwidth=1, relheight=1)
 btn1 = ttk.Button(root,text="Add Book Details",command=addBook)
 btn1.place(relx=0.28,rely=0.4, relwidth=0.45,relheight=0.1)
     
-btn2 = ttk.Button(root,text="Delete Book",)
+btn2 = ttk.Button(root,text="Delete Book",command=deleteBook)
 btn2.place(relx=0.28,rely=0.5, relwidth=0.45,relheight=0.1)
     
 btn3 = ttk.Button(root,text="View Book List" )
