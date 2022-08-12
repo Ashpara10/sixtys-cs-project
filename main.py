@@ -2,6 +2,9 @@ import tkinter as tk
 import tkinter.ttk as ttk
 from  AddBook import addBook
 from  DeleteBook import delete as deleteBook
+from  ViewBooks import View
+from  IssuedBooks import  issueBook
+from ReturnBook import returnBook
 import pymysql
 
 root = tk.Tk()
@@ -36,13 +39,13 @@ btn1.place(relx=0.28,rely=0.4, relwidth=0.45,relheight=0.1)
 btn2 = ttk.Button(root,text="Delete Book",command=deleteBook)
 btn2.place(relx=0.28,rely=0.5, relwidth=0.45,relheight=0.1)
     
-btn3 = ttk.Button(root,text="View Book List" )
+btn3 = ttk.Button(root,text="View Book List",command=View )
 btn3.place(relx=0.28,rely=0.6, relwidth=0.45,relheight=0.1)
     
-btn4 = ttk.Button(root,text="Issue Book to Student" )
+btn4 = ttk.Button(root,text="Issue Book to Student" ,command=issueBook)
 btn4.place(relx=0.28,rely=0.7, relwidth=0.45,relheight=0.1)
     
-btn5 = ttk.Button(root,text="Return Book")
+btn5 = ttk.Button(root,text="Return Book",command=returnBook)
 btn5.place(relx=0.28,rely=0.8, relwidth=0.45,relheight=0.1)
 
 root.mainloop()
